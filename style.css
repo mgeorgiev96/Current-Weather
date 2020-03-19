@@ -1,0 +1,177 @@
+html,body{
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    font-family: 'Kanit', sans-serif;
+   background-color: #5C73F2;
+   color: white;
+}
+
+h1{
+   animation: slide 1s ease-in-out;
+}
+
+.display_Container{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-areas: "head head head"
+                         "desc img temp"
+                         "hum cloud wind"
+                         "time time time";
+    text-align: center;
+    align-content: center;
+    align-content: center;
+    justify-content: center;
+    border-bottom: 2px solid white;
+}
+
+.control_Container{
+    width: 100%;
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 2px solid white;
+   padding-bottom: 2vh;
+   background-color: #35459E;
+
+}
+
+.head_section{
+    display: flex;
+    flex-flow: column;
+   width: 100%;
+   justify-content: center;
+   align-content: center;
+   text-align: center;
+   background-color: #35459E;
+}
+
+input{
+   border-radius: 5px;
+   margin: 2vh 0 2vh 0;
+   width: 50%;
+   text-align: center;
+   font-size: 1.2rem;
+}
+button{
+
+   font-size: 1.7rem;
+   background: #35459E;
+   border: none;
+   color: white;
+   
+}
+footer{
+   height: 25%;
+   background: #35459E;
+   margin-bottom: 0;
+}
+
+
+.img{
+    width: 10vw;
+    height: 10vw;
+    margin: 2vw 0 10vw 11.5vw;
+}
+
+.large{
+   transform: scale(1.5);
+   transition: 750ms;
+}
+
+.active{
+   animation: show 1s ease-in-out;
+   animation-fill-mode: both;
+}
+
+.local_time{
+   grid-area: time;
+   font-family: 'Russo One', sans-serif;
+}
+
+.name{
+    grid-area: head;
+   font-family: 'Russo One', sans-serif;
+}
+.description{
+   grid-area: desc;
+   font-size: 1.2rem;
+}
+.temperature{
+    grid-area: temp
+}
+.humidity{
+    grid-area: hum
+}
+.winds{
+    grid-area: wind
+}
+.clouds{
+    grid-area: cloud
+}
+
+button:hover{
+   transition: 500ms;
+   transform: scale(1.2);
+   color: green;
+   cursor: pointer;
+}
+input:focus{
+   border: 2px solid #0099e6;
+   box-shadow: 0 0.5px 2px 1px #0099e6;
+}
+
+@keyframes show {
+   0%{
+      opacity: 0.2;
+   }
+   25%{
+      opacity: 0.3;
+   }
+   50%{
+      opacity: 0.5;
+   }
+   50%{
+      opacity: 0.6;
+   }
+   75%{
+      opacity: 0.7;
+   }
+   80%{
+      opacity: 0.8;
+   }
+   90%{
+      opacity: 0.9;
+   }
+   100%{
+      opacity: 1;
+      
+   }
+}
+
+@media all and (min-width:700px){
+.img{
+    width: 5vw;
+    height: 5vw;
+    margin: 2vw 0 10vw 14vw;
+}
+   input{
+      width: 20%;
+   }
+}
+
+@keyframes slide{
+   0%{
+      transform: translateY(-100px)
+   }
+   50%{
+      transform:  translateY(30px)
+   } 
+   
+   100%{
+      transform: translateY(0)
+   }
+}
